@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-math {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes train-bob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes steam-rise {
+  0% {
+    opacity: 0.85;
+    transform: translate(0px, 0px) scale(0.75);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-28px, -26px) scale(1.35);
+  }
+}
+
+@keyframes wheel-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes crate-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.animate-train-bob {
+  animation: train-bob 1.2s ease-in-out infinite;
+}
+
+.animate-steam-1 {
+  animation: steam-rise 1.6s ease-out infinite;
+}
+
+.animate-steam-2 {
+  animation: steam-rise 1.6s ease-out 0.8s infinite;
+}
+
+.animate-wheel-spin {
+  animation: wheel-spin 0.9s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animate-crate-pop {
+  animation: crate-pop 180ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-train-bob,
+  .animate-steam-1,
+  .animate-steam-2,
+  .animate-wheel-spin,
+  .animate-crate-pop {
+    animation: none !important;
+  }
+}

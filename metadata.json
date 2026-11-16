@@ -1,0 +1,6 @@
+{
+  "name": "Számvonat Expressz",
+  "description": "Játékos 3. osztályos matek videójáték: összeadás és kivonás kerek tízesekkel és százasokkal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
